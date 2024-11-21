@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
 .shipment-tracker {
     font-family: 'Hanken Grotesk', sans-serif;
     background-color: #F0F3FF;
@@ -6,405 +7,130 @@
     display: flex;
     flex-direction: row;
     padding: 20px;
-    padding-left: 40px;
     gap: 20px;
-    height: 100vh;
-    width:96.3vw; /* Full viewport height */
+    height: 70vh;
+    width: 96.3vw;
 }
-/* Left Sidebar */
 .left-sidebar {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 500px; /* Fixed width for the left section */
+    width: 500px;
+    position: relative;
+    margin-top: 50px;
 }
-
 .main-heading {
-    font-size: 2rem; /* Increased font size */
+    font-size: 2.5rem;
     font-weight: bold;
     text-align: left;
-    color: #004aad;
+    color: black;
+    width: 400px;
+    padding-left: 20px;
+    margin-top: -75px;
 }
-
-.chatbot-icon {
-    width: 50px;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-.chat-box {
-    width: 100%;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-/* Right Section Layout */
-.right-content {
-    display: grid;
-    grid-template-columns: 600px 250px; /* Map + Alerts side-by-side */
-    grid-template-rows: 350px 150px; /* Map/Alert above Time/Notifications */
-    gap: 10px; /* Space between sections */
-    width: 850px; /* Fixed width for right section */
-    height: 500px; /* Fixed height */
-    background: white;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Map Section */
-.map-section {
-    grid-column: 1 / 2; /* First column */
-    grid-row: 1 / 2; /* First row */
-    background: #eaeaea;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.map-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Prevent distortion */
-    border-radius: 8px;
-}
-
-/* Alert Section */
-.alert-box {
-    grid-column: 2 / 3; /* Second column */
-    grid-row: 1 / 2; /* First row */
-    background: #fff;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Time Left Section */
-.time-left {
-    grid-column: 1 / 2; /* First column */
-    grid-row: 2 / 3; /* Second row */
-    background: #fff;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.time-left h2 {
-    margin-bottom: 5px;
-    font-size: 1rem;
-}
-
-.time {
-    font-size: 1.3rem;
-    color: #e63946;
-}
-
-/* Notifications Section */
-.update-box {
-    grid-column: 2 / 3; /* Second column */
-    grid-row: 2 / 3; /* Second row */
-    background: #fff;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Chatbox Toggle on Top */
-.left-sidebar {
-    position: relative;
-}
-
-.chat-box {
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-/* Left Sidebar */
-.left-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 500px;
-    position: relative;
-}
-
-/* Chatbot icon stays at the bottom */
-.chatbot-icon {
-    width: 50px;
-    cursor: pointer;
-    margin-top: auto; /* Pushes the icon to the bottom */
-    margin-bottom: 10px;
-    position: fixed;
-    bottom: 20px; /* Positioned at the bottom of the screen */
-    left: 20px; /* Positioned slightly from the left */
-}
-
-/* Chat box appears just above the chatbot icon */
-.chat-box {
-    position: fixed;
-    bottom: 80px; /* 60px for the icon's height + 20px padding */
-    left: 20px; /* Align with the icon */
-    width: 300px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
-    z-index: 100;
-}
-
-/* Chat header styles remain the same */
-.chat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #ddd;
-}
-
-.chat-buttons button {
-    background-color: #004aad;
-    color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 5px 5px 0 0;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
-
-.chat-buttons button:hover {
-    background-color: #00307a;
-}
-/* General Styles */
-.shipment-tracker {
-    font-family: 'Arial', sans-serif;
-    background-color: #F0F3FF;
-    color: #333;
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    gap: 20px;
-    height:70vh;
-    width:96.3vw; /* Full viewport width */
-}
-
-/* Left Sidebar */
-.left-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 500px;
-    position: relative;
-}
-
-/* Chatbot icon stays at the bottom of the screen */
 .chatbot-icon {
     width: 50px;
     cursor: pointer;
     position: fixed;
-    bottom: 20px; /* Positioned at the bottom of the screen */
-    left: 20px; /* Positioned slightly from the left */
+    bottom: 20px;
+    left: 25px;
     z-index: 200;
 }
-
-/* Chatbox appears just above the chatbot icon */
-.chat-box {
-    position: fixed;
-    bottom: 60px; /* Space between the icon and the box */
-    left: 20px; /* Align with the icon */
-    width: 50vw; /* Half of the screen width */
-    max-width: 400px; /* Optional max-width */
-    height: 40vh; /* Bottom half of the screen height */
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Chat header styles */
-.chat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Button styles in the chatbox */
-.chat-buttons button {
-    background-color: #004aad;
-    color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 5px 5px 0 0;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
-
-.chat-buttons button:hover {
-    background-color: #00307a;
-}
-
-/* Other sections of the page */
 .right-content {
     display: grid;
-    grid-template-columns: 600px 250px; /* Map + Alerts side-by-side */
-    grid-template-rows: 350px 150px; /* Map/Alert above Time/Notifications */
-    gap: 10px; /* Space between sections */
-    width: 850px; /* Fixed width for right section */
-    height: 500px; /* Fixed height */
-    background: white;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Left Sidebar */
-.left-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 500px;
-    position: relative;
-}
-
-/* Chatbot icon stays at the bottom of the screen */
-.chatbot-icon {
-    width: 50px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px; /* Positioned at the bottom of the screen */
-    left: 20px; /* Positioned slightly from the left */
-    z-index: 200;
-}
-
-/* Chatbox appears just above the chatbot icon and takes bottom half of the screen */
-.chat-box {
-    position: fixed;  /* Make it fixed to the viewport */
-    bottom: 70px;  /* Position it just above the chatbot icon */
-    left: 20px;  /* Align it with the icon */
-    width: 50vw;  /* Half of the screen width */
-    max-width: 400px;  /* Optional max-width */
-    height: 50vh;  /* Bottom half of the screen height */
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
-    z-index: 100;
-    display: none;  /* Hidden by default */
-    flex-direction: column;
-}
-
-
-/* Show chatbox when active */
-.chat-box.open {
-    display: flex; /* Only visible when 'open' class is added */
-}
-
-/* Chat header styles */
-.chat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Button styles in the chatbox */
-.chat-buttons button {
-    background-color: #004aad;
-    color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 5px 5px 0 0;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
-
-.chat-buttons button:hover {
-    background-color: #00307a;
-}
-
-/* Right content layout */
-.right-content {
-    display: grid;
-    grid-template-columns: 600px 250px; /* Map + Alerts side-by-side */
-    grid-template-rows: 350px 150px; /* Map/Alert above Time/Notifications */
-    gap: 10px; /* Space between sections */
-    width: 850px; /* Fixed width for right section */
-    height: 500px; /* Fixed height */
+    grid-template-columns: 600px 250px; 
+    grid-template-rows: 350px 150px;
+    gap: 10px;
+    width: 850px;
+    height: 500px;
     background: white;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: -20px;
 }
-.chat-container {
-    position: relative;  /* Positioning context for the icon and chatbox */
+.map-section {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background: #eaeaea;
+    border-radius: 8px;
     display: flex;
-    flex-direction: column; /* Stack the elements vertically */
-    align-items: flex-start; /* Align the elements to the left */
+    justify-content: center;
+    align-items: center;
 }
-
-.chatbot-icon {
-    width: 50px;
-    cursor: pointer;
-    margin-bottom: 25px;
-    margin-left: 5px; /* Space between icon and chatbox */
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
-
-.chat-box {
-    width: 50vw;  /* Half of the screen width */
-    max-width: 400px;  /* Optional max-width */
-    height: 50vh;  /* Bottom half of the screen height */
-    background: #f9f9f9;
-    border: 1px solid #ddd;
+.alert-box {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background: #fff;
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-size: 0.9rem;
     display: flex;
     flex-direction: column;
-    position: absolute;  /* Keep it inside the container */
-    bottom: 60px;  /* Position it just above the icon */
-    z-index: 100;
+    justify-content: center;
+    text-align: center;
 }
-
+.time-left {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.time-left h2 {
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+.time {
+    font-size: 1.3rem;
+    color: #e63946;
+}
+.update-box {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.chat-box {
+    position: fixed;
+    bottom: 80px;
+    left: 35px;
+    width: 50vw;
+    max-width: 400px;
+    height: 50vh;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+}
+.chat-box.open {
+    display: flex;
+}
 .chat-header {
     display: flex;
     justify-content: space-between;
@@ -414,6 +140,13 @@
     border-bottom: 1px solid #ddd;
 }
 
+.close-chat {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #004aad;
+}
 .chat-buttons button {
     background-color: #004aad;
     color: white;
@@ -424,24 +157,6 @@
     font-size: 0.85rem;
     cursor: pointer;
 }
-
 .chat-buttons button:hover {
     background-color: #00307a;
-}
-.left-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 500px;
-    position: relative;
-    margin-top: 50px; /* Push the entire left sidebar content down */
-}
-.main-heading {
-    font-size: 2.5rem; /* Increased font size */
-    font-weight: bold;
-    text-align: left;
-    color: black;
-    margin-top: -75px;
-    width: 400px;
-    padding-left: 20px; /* Adjust spacing specifically for the heading */
 }

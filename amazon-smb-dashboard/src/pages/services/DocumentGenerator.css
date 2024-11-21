@@ -93,18 +93,9 @@
     flex-direction: column;
     gap: 10px;
   }
-  
- 
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .document-options {
-      grid-template-columns: 1fr;
-    }
-  }
   .form-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
   }
   
@@ -131,7 +122,6 @@
   textarea {
     resize: none;
   }
-  
   .upload-btn {
     margin-top: 15px;
     padding: 10px 20px;
@@ -142,10 +132,8 @@
     cursor: pointer;
     align-self: flex-end;
   }
-  
-  /* Adjustments for mobile */
   @media (max-width: 768px) {
     .form-grid {
-      grid-template-columns: 1fr; /* Single column for small screens */
+      grid-template-columns: 1fr;
     }
   }
