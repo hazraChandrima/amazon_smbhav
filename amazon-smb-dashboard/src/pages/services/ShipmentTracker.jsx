@@ -17,7 +17,6 @@ const ShipmentTracker = () => {
 
   return (
     <div className="shipment-tracker">
-      {/* Left Sidebar */}
       <div className="left-sidebar">
         <h1 className="main-heading">Shipment Tracker & Live Updates</h1>
         <div className="chat-container">
