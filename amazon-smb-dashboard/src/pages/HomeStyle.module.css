@@ -23,6 +23,7 @@
 }
 
 .image {
+    margin-top: 90px;
     max-width: 480px;
     /* Adjust image size */
     height: auto;

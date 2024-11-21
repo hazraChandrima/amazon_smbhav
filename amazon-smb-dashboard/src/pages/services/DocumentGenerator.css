@@ -1,12 +1,16 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap'); 
 .document-generator-container {
     display: flex;
-    padding: 30px 40px 0;
+    padding: 30px 40px;
     gap: 20px;
     font-family: 'Hanken Grotesk', sans-serif;
     background-color: #f0f3ff;
     min-height: 80vh;
     color: #000000;
+    margin-top: 300px;
+    /* height:100vh; */
+    overflow: auto;
   }
   
   .text-section {
@@ -14,6 +18,7 @@
   }
   
   .text-section h1 {
+    margin-top: 1px;
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 15px;
@@ -26,7 +31,7 @@
   
   .document-options {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns:repeat(2,1fr); 
     gap: 20px;
   }
   
@@ -137,3 +142,4 @@
       grid-template-columns: 1fr;
     }
   }
+  
