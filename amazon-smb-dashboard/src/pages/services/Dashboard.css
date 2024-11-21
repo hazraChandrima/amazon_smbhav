@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap'); 
 
-html, body {
-    margin: 0;
+  /* html, body {
+    /* margin: 0;
     padding: 0;
-    overflow: hidden; /* Disable scrollbars */
-    height: 100%; /* Full height of the viewport */
-    width: 100%; /* Full width of the viewport */
+    overflow: hidden; 
+    height: 100%; 
+    width: 100%; 
     background-color: F0F3FF;
-}
+}  */
 
 /* App Layout */
 .app {
@@ -40,8 +40,8 @@ html, body {
     box-sizing: border-box;
   }
   .dashboard-title {
-    margin-top: 80px;
-    font-size: 48px; /* Large font size */
+    /* margin-top: 3px; */
+    font-size: 40px; /* Large font size */
     font-weight: bold; /* Bold text */
     text-align: left; /* Center the text horizontally */
     color: #000; /* Black text color */
@@ -62,11 +62,11 @@ html, body {
   }
 
   .welcome-text {
-    margin-top: 13px;
+    margin-top: -40px;
     font-size: 16px;
     font-weight: bold;
     color: #000; /* Black color for text */
-    line-height: 1.5; /* Adjust spacing between "Welcome" and "User" */
+    /* line-height: 1.5; Adjust spacing between "Welcome" and "User" */
   }
   
   
@@ -83,12 +83,12 @@ html, body {
   
   /* Sidebar Menu Container */
   .menu-container {
-    padding: 20px;
+    padding: 10px;
     border: 2px solid #FF9900; /* Border color */
     border-radius: 15px; /* Rounded edges */
     background-color: #fff; /* White background for the container */
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: -10px;
   }
 
   /* Recent Trips Container */
@@ -133,7 +133,7 @@ html, body {
   }
   
   .menu-item {
-    padding: 15px 10px; /* Adjust padding for box size */
+    padding: 10px 10px; /* Adjust padding for box size */
     border: 2px solid transparent; /* Default border transparent */
     text-align: center;
     border-radius: 5px;
@@ -151,12 +151,13 @@ html, body {
   
   .menu-item:hover {
     background-color: #FFE5B4;
+    color: black;
   }
   
   /* Recent Trips */
   .recent-trips h3 {
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   
   /* Dashboard Content */
@@ -173,7 +174,7 @@ html, body {
   
   .map-container {
     background-color: #e0e0e0;
-    height: 250px;
+    height: 220px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -280,7 +281,7 @@ html, body {
     padding: 20px; /* Spacing around the container */
     border-radius: 10px; /* Rounded edges */
     border: 2px solid #000000; /* Black border */
-    margin-bottom: 20px; /* Spacing below */
+    margin-bottom: px; /* Spacing below */
     text-align: center;
   }
   
@@ -311,7 +312,7 @@ html, body {
     color: #000000; /* Black text */
     background-color: #FFE7C2; /* Light orange background */
     border-radius: 10px; /* Rounded edges */
-    padding: 10px; /* Spacing around content */
+    padding: 8px; /* Spacing around content */
   }
   
   .details-grid div {

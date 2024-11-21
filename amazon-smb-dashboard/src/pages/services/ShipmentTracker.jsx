@@ -1,5 +1,12 @@
 import React, { useState } from "react";
+import config from "/src/chatbot/config";
+import MessageParser from "/src/chatbot/MessageParser";
+import ActionProvider from "/src/chatbot/ActionProvider";
+import Chatbot from "react-chatbot-kit";
+import "react-chatbot-kit/build/main.css"; 
 import "./ShipmentTracker.css";
+
+
 
 const ShipmentTracker = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -21,25 +28,22 @@ const ShipmentTracker = () => {
             onClick={toggleChat}
           />
           {/* Toggle Chatbox visibility based on isChatOpen */}
-          <div className={`chat-box ${isChatOpen ? "open" : ""}`}>
-            <div className="chat-header">
-              <h3>Alexa</h3>
-              <button className="close-chat" onClick={toggleChat}>
-                ✖
-              </button>
+          {isChatOpen && (
+            <div className="chat-box open">
+              <div className="chat-header">
+                <h3>Alexa</h3>
+                <button className="close-chat" onClick={toggleChat}>
+                  ✖
+                </button>
+              </div>
+              {/* Embed Chatbot */}
+              <Chatbot
+                config={config}
+                messageParser={MessageParser}
+                actionProvider={ActionProvider}
+              />
             </div>
-            <div className="chat-message">
-              <p>Hi there 👋 How can I help you today?</p>
-              <p className="chat-note">
-                By chatting, you consent to this chat being recorded and stored
-                according to our <a href="#">privacy policy</a>.
-              </p>
-            </div>
-            <div className="chat-buttons">
-              <button>Connect me to sales.</button>
-              <button>I want a quote.</button>
-            </div>
-          </div>
+          )}
         </div>
       </div>
 
@@ -73,8 +77,8 @@ const ShipmentTracker = () => {
         <div className="update-box">
           <h2>Notifications</h2>
           <p>
-            ⚠️ Shipment #12345 has been rerouted to avoid the storm, expected to
-            cross Port Kalinga next.
+            ⚠️ Shipment #12345 has been rerouted to avoid the storm, expected
+            to cross Port Kalinga next.
           </p>
         </div>
       </div>
@@ -83,3 +87,4 @@ const ShipmentTracker = () => {
 };
 
 export default ShipmentTracker;
+

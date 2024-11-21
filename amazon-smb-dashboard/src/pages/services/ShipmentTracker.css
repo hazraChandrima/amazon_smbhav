@@ -32,7 +32,7 @@
     width: 50px;
     cursor: pointer;
     position: fixed;
-    bottom: 20px;
+    bottom: 40px;
     left: 25px;
     z-index: 200;
 }
@@ -113,50 +113,61 @@
 }
 .chat-box {
     position: fixed;
-    bottom: 80px;
-    left: 35px;
-    width: 50vw;
-    max-width: 400px;
-    height: 50vh;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
+    bottom: 30px; /* Adjusted for better spacing */
+    left: 70px; /* Aligned with chatbot icon */
+    
+    background: #ffffff; /* Clean white background */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevated shadow for better visibility */
     z-index: 100;
-    display: none;
+    display: none; /* Default hidden */
     flex-direction: column;
+    font-family: 'Hanken Grotesk', sans-serif; /* Ensure consistent font */
 }
+
 .chat-box.open {
     display: flex;
 }
+
 .chat-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px; /* Extra padding for separation */
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee; /* Subtle divider */
+    font-size: 1rem; /* Slightly larger font */
+    font-weight: bold;
 }
 
 .close-chat {
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 1.2rem; /* Larger close button */
     cursor: pointer;
-    color: #004aad;
+    color: #e63946; /* Red for better visibility */
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth hover effect */
 }
+
+.close-chat:hover {
+    color: #b00020; /* Darker shade on hover */
+}
+
 .chat-buttons button {
-    background-color: #004aad;
+    background-color: #004aad; /* Consistent brand color */
     color: white;
     border: none;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 5px 5px 0 0;
-    font-size: 0.85rem;
+    padding: 10px 15px; /* Larger button size */
+    border-radius: 6px;
+    margin: 10px 5px 0 0; /* Adjusted margin for better spacing */
+    font-size: 0.9rem; /* Slightly larger font for readability */
     cursor: pointer;
+    transition: background-color 0.3s; /* Smooth hover effect */
 }
+
 .chat-buttons button:hover {
-    background-color: #00307a;
+    background-color: #00307a; /* Darker blue on hover */
 }
