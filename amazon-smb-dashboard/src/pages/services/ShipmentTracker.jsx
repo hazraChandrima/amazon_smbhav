@@ -3,7 +3,7 @@ import config from "/src/chatbot/config";
 import MessageParser from "/src/chatbot/MessageParser";
 import ActionProvider from "/src/chatbot/ActionProvider";
 import Chatbot from "react-chatbot-kit";
-import "react-chatbot-kit/build/main.css"; 
+import "/src/chatbot/chatbot.css"; 
 import "./ShipmentTracker.css";
 
 
