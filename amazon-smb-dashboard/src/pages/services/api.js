@@ -1,26 +1,34 @@
-// src/services/api.js
+const BASE_URL =
+  "https://keen-unicorn-487a0d.netlify.app/.netlify/functions/api";
 
-const BASE_URL = 'https://keen-unicorn-487a0d.netlify.app/.netlify/functions/api';
-
-// This function now supports sending a POST request with the filter data
-export async function fetchData(endpoint, { method = 'POST', body = null, headers = {} }) {
+/**
+ * Fetch data from the API with query parameters.
+ * @param {string} endpoint - The API endpoint to hit.
+ * @param {Object} options - Request options, including method and params.
+ * @param {string} options.method - HTTP method (default: 'GET').
+ * @param {Object} options.params - Query parameters to include in the request.
+ * @returns {Promise<Object>} - The JSON response from the API.
+ */
+export async function fetchData(endpoint, { method = "GET", params = {} }) {
   try {
-    const options = {
-      method: method,
-      headers: {
-        'Content-Type': 'application/json',
-        ...headers,
-      },
-      body: body ? JSON.stringify(body) : null,  // Only include body if provided
-    };
+    // Construct query string from params object
+    const queryString = new URLSearchParams(params).toString();
+    const url = `${BASE_URL}/${endpoint}?${queryString}`;
 
-    const response = await fetch(`${BASE_URL}/${endpoint}`, options);
+    // Fetch data from the API
+    const response = await fetch(url, { method });
 
-    if (!response.ok) throw new Error('Failed to fetch data');
+    // Handle non-200 responses
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch data: ${response.status} ${response.statusText}`
+      );
+    }
 
+    // Parse and return JSON response
     return await response.json();
   } catch (error) {
-    console.error('API Error:', error.message);
+    console.error("API Error:", error.message);
     throw error;
   }
 }
