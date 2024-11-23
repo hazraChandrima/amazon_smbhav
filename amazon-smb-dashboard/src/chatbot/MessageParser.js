@@ -25,8 +25,8 @@ class MessageParser {
     else if (
       intents.weather.some((word) => lowercase.includes(word)) ||
       lowercase.includes("what's the weather") ||
-      lowercase.includes("what is the weather") ||
-      lowercase.includes("whats the weather") 
+      lowercase.includes("whats the weather") ||
+      lowercase.includes("what is the weather") 
     ) {
       const cityMatch = lowercase.match(
         /(?:weather in|weather for|in|at|for)\s([a-z\s]+)/i
