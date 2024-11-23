@@ -94,7 +94,7 @@
   height: 0;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-right: 8px solid #2898ec;
+  border-right: 8px solid #8dc9f7;
   position: absolute;
   left: -8px;
   top: 50%;
@@ -183,7 +183,10 @@
   border: none;
   font-size: 0.85rem;
   border-top: 1px solid #d8d8d8;
-  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  color: #1d1d1d;
 }
 
 .react-chatbot-kit-chat-input-form {
@@ -193,6 +196,7 @@
 
 .react-chatbot-kit-chat-input::placeholder {
   color: #999;
+  /* border: 1px solid #1d1d1d; */
 }
 
 .react-chatbot-kit-chat-btn-send {
@@ -230,7 +234,7 @@
   margin: 25px auto;
   color: #38728b;
   padding: 8px;
-  border: 1px solid #2898ec;
+  border: 1px solid #76c2fd;
   width: 130px;
   text-align: center;
   text-decoration: none;
