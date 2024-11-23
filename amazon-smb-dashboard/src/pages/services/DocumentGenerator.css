@@ -127,19 +127,97 @@
   textarea {
     resize: none;
   }
+
   .upload-btn {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #FF9900;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: flex-end;
-  }
+  background-color: #ff9800; /* Regular button color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  color: black;
+  align-self: flex-end;
+  margin-top: 5px;
+}
+
+.upload-btn:hover {
+  background-color: #e68900; /* Hover state */
+}
+
+.upload-btn:disabled {
+  background-color: #ccc; /* Disabled button color */
+  color: #666; /* Text color for disabled state */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
+
   @media (max-width: 768px) {
     .form-grid {
       grid-template-columns: 1fr;
     }
   }
+
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.preview-table th,
+.preview-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.preview-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.preview-table td {
+  background-color: #fff;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  font-size: smaller;
+  padding: 20px;
+  padding-bottom: 35px;
+  width: 90%; /* Adjust width as needed */
+  max-width: 500px; /* Optional: limit the width */
+  height: auto; /* Allow dynamic height based on content */
+  max-height: 70%; /* Restrict maximum height */
+  /* overflow-y: auto; */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
   
