@@ -21,7 +21,7 @@ body {
   text-align:left;
   color: #1a202c;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 45px;
   font-weight: bold;
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .filter-input {
-  width: 90%;
+  width: 94%;
   padding: 10px; /* Slightly larger padding for input fields */
 }
 
@@ -70,12 +70,15 @@ body {
 /* Add hover effect for better interactivity */
 .filter:hover,
 .filter-input:hover {
-  border-color: #0096c7; /* Blue highlight on hover */
+  background-color: antiquewhite;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Increased width for Destination dropdown */
-
+.a1{
+  margin-top: 0;
+  padding-top: 0;
+}
 
 /* Results table styles */
 .results-table {
