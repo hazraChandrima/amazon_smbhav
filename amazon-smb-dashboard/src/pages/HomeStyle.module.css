@@ -11,7 +11,8 @@
     height: 85vh;
     width: 98vw;
     background-color: #f0f3ff;
-    padding: 0 20px;
+    padding-left:  20px;
+    padding-right: 20px;
     box-sizing: border-box;
     gap: 2rem;
     /* Adds spacing between image and text */
@@ -23,7 +24,7 @@
 }
 
 .image {
-    margin-top: 90px;
+    margin-top: 50px;
     max-width: 480px;
     /* Adjust image size */
     height: auto;

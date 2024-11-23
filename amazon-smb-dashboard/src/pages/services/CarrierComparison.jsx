@@ -8,35 +8,51 @@ function CarrierComparison() {
     <div className="filters">
       {/* Filter Boxes */}
       <div className="filter-group">
+        <h2>From</h2>
         <select className="filter">
           <option>Source</option>
         </select>
         <input type="text" placeholder="zip code" className="filter-input" />
       </div>
       <div className="filter-group">
+      <h2>To</h2>
         <select className="filter">
           <option>Destination</option>
         </select>
         <input type="text" placeholder="zip code" className="filter-input" />
       </div>
-      <select className="filter">
-        <option>Parcel Weight (kg/lb)</option>
-      </select>
-      <select className="filter">
-        <option>Item Type</option>
+      <div className="filter-group">
+      <h2>Parcel Weight</h2>
+        <select className="filter">
+        <option> (kg/lb)</option>
       </select>
       <select className="filter">
         <option>Ideal Shipping Duration</option>
       </select>
+      </div>
+      <div className="filter-group">
+      <h2>Item Type</h2>
+      <select className="filter">
+        <option>Type</option>
+      </select>
       <select className="filter">
         <option>Special Requirements</option>
       </select>
-      <select className="filter">
+
+      </div>
+      {/* <select className="filter">
+        <option>Parcel Weight (kg/lb)</option>
+      </select> */}
+      {/* <select className="filter">
+        <option>Ideal Shipping Duration</option>
+      </select> */}
+      {/* <select className="filter">
+        <option>Special Requirements</option>
+      </select> */}
+      {/* <select className="filter">
         <option>Insurance</option>
-      </select>
-      <select className="filter">
-        <option>Priority Handling</option>
-      </select>
+      </select> */}
+  
     </div>
 
     {/* Results Table */}
