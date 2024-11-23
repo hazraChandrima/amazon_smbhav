@@ -147,13 +147,13 @@
     border: none;
     font-size: 1.2rem; /* Larger close button */
     cursor: pointer;
-    color: #e63946; /* Red for better visibility */
+    color: #580209; /* Red for better visibility */
     font-weight: bold;
     transition: color 0.3s; /* Smooth hover effect */
 }
 
 .close-chat:hover {
-    color: #b00020; /* Darker shade on hover */
+    color: #000000; /* Darker shade on hover */
 }
 
 .chat-buttons button {

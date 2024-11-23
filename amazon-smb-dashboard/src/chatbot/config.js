@@ -9,10 +9,10 @@ const config = {
   botName: "Alexa",
   customStyles: {
     botMessageBox: {
-      backgroundColor: "#004aad",
+      backgroundColor: "#146eb4",
     },
     chatButton: {
-      backgroundColor: "#004aad",
+      backgroundColor: "#ffc978",
     },
   },
   actionProvider: ActionProvider,
