@@ -1,5 +1,4 @@
 /* Global styles */
-
 body {
   background-color: #f0f4fc;
   margin: 0;
@@ -10,7 +9,7 @@ body {
 /* Main container with full width */
 .comparison-container {
   width: 96.3vw;
-  color:#1a202c;
+  color: #1a202c;
   padding: 20px;
   margin: 0 auto;
 }
@@ -18,7 +17,7 @@ body {
 /* Title styling */
 .title {
   margin-left: 8px;
-  text-align:left;
+  text-align: left;
   color: #1a202c;
   margin-bottom: 30px;
   font-size: 45px;
@@ -40,7 +39,6 @@ body {
   grid-template-rows: auto auto; /* Stack items vertically */
   gap: 12px; /* Increased gap for space between dropdown and zip code */
   width: 100%; /* Full width for responsiveness */
-  /* max-width: 220px; Ensure consistent size for dropdowns and inputs */
 }
 
 /* Style for dropdowns and zip code inputs */
@@ -50,7 +48,7 @@ body {
   border: 1px solid #d1d5db;
   border-radius: 30px;
   font-size: 14px;
-    color: #1a202c;
+  color: #1a202c;
   background-color: #fff;
   width: 100%; /* Full width inside the grid */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better visual appeal */
@@ -75,7 +73,7 @@ body {
 }
 
 /* Increased width for Destination dropdown */
-.a1{
+.a1 {
   margin-top: 0;
   padding-top: 0;
 }
@@ -120,20 +118,18 @@ body {
 /* Adjust responsiveness */
 @media (max-width: 1024px) {
   .filters {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-      gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    gap: 20px;
   }
 
   .filter-group {
-      max-width: 100%; /* Allow full width stacking */
+    max-width: 100%; /* Allow full width stacking */
   }
 }
 
 @media (max-width: 768px) {
   .filters {
-      grid-template-columns: 1fr; /* Single column for smaller screens */
-      gap: 20px;
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+    gap: 20px;
   }
-
-
 }
