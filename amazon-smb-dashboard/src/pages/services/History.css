@@ -1,24 +1,120 @@
-.MuiTimelineItem-root {
-    padding-left: 20px;
-  }
-  
-  .MuiTimelineConnector-root {
-    background-color: #00a896;
-  }
-  
-  .MuiTimelineDot-root {
-    border: 2px solid #00a896;
-    background-color: white;
-  }
-  
-  .MuiTimelineDot-root.Mui-selected {
-    background-color: #00a896;
-  }
-  
-  .MuiTimelineContent-root {
-    padding-left: 16px;
-  }
-  .shipment-timeline{
-    margin-left: 250px;
-    padding-left: 100px;
-  }
+/* General Styles */
+.shipment-timeline {
+  width: 96vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: #F0F3FF;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: 40px; /* Increased the font size */
+  color: #333;
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+}
+
+/* Timeline List */
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 4px;
+  height: 100%;
+  background-color: #00a896;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item:first-child .timeline-icon {
+  color: #f2545b; /* Highlight for the first item */
+}
+
+.timeline-item:last-child .timeline-icon {
+  color: #00a896; /* Highlight for the last item */
+}
+
+/* Timeline Icons */
+.timeline-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 3px solid #00a896;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00a896;
+  font-size: 1.2rem;
+  margin-right: 20px;
+  position: relative;
+}
+
+.timeline-item .timeline-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 15px;
+  background-color: #00a896;
+}
+
+.timeline-item:last-child .timeline-icon::after {
+  display: none;
+}
+
+.icon-marker {
+  font-size: 1.5rem;
+}
+
+.icon-check {
+  font-size: 1.5rem;
+}
+
+/* Timeline Details */
+.timeline-details {
+  flex: 1;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.location {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+.time {
+  font-size: 0.9rem;
+  color: #999;
+}
