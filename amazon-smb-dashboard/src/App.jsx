@@ -30,8 +30,8 @@ function App() {
             element={<ShipmentTracker />}
           />
           <Route path="/services/dashboard" element={<Dashboard />} />
-          <Route path="/services/messaging" element={<Messaging />} />
-          <Route path="/services/notifications" element={<Notifications />} />
+          <Route path="/messaging" element={<Messaging />} />
+          <Route path="/notifications" element={<Notifications />} />
         </Routes>
       </div>
     </Router>
