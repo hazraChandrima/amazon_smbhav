@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import config from "/src/chatbot/config";
 import MessageParser from "/src/chatbot/MessageParser";
 import ActionProvider from "/src/chatbot/ActionProvider";
@@ -25,6 +25,7 @@ const ShipmentTracker = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isContentVisible, setIsContentVisible] = useState(false); // New state for visibility
   const [trackingNumber, setTrackingNumber] = useState(""); // State to hold input value
+  const [remainingTime, setRemainingTime] = useState(12 * 60 * 60); // Time in seconds (12 hours)
 
   const shipmentCoordinates = [19.0760, 72.8777]; // Example coordinates
   const currentLocation = "Mumbai, India";
@@ -41,11 +42,29 @@ const ShipmentTracker = () => {
     }
   };
 
+  // Countdown timer logic
+  useEffect(() => {
+    let timer;
+    if (isContentVisible && remainingTime > 0) {
+      timer = setInterval(() => {
+        setRemainingTime((prevTime) => prevTime - 1);
+      }, 1000);
+    }
+    return () => clearInterval(timer); // Cleanup on unmount or visibility change
+  }, [isContentVisible, remainingTime]);
+
+  // Format the remaining time as HH:MM:SS
+  const formatTime = (timeInSeconds) => {
+    const hours = Math.floor(timeInSeconds / 3600);
+    const minutes = Math.floor((timeInSeconds % 3600) / 60);
+    const seconds = timeInSeconds % 60;
+    return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  };
+
   return (
     <div className="shipment-tracker">
       <div className="left-sidebar">
         <h1 className="main-heading">Shipment Tracker & Live Updates</h1>
-
         {/* Input Section */}
         <div className="input-section">
           <input
@@ -59,6 +78,41 @@ const ShipmentTracker = () => {
             Go!
           </button>
         </div>
+
+        {/* Shipment Information Section */}
+        {isContentVisible && (
+          <div className="shipment-info">
+            <h2>Shipment Details</h2>
+            <div>
+              <span>Tracking ID:</span>
+              <span>{trackingNumber}</span>
+            </div>
+            <div>
+              <span>Status:</span>
+              <span>In Transit</span>
+            </div>
+            <div>
+              <span>ETA:</span>
+              <span>{new Date(Date.now() + remainingTime * 1000).toLocaleString()}</span>
+            </div>
+            <div>
+              <span>Carrier:</span>
+              <span>DHL Express</span>
+            </div>
+            <div>
+              <span>Current Location:</span>
+              <span>Chennai, India</span>
+            </div>
+            <div>
+              <span>Origin:</span>
+              <span>Mumbai, India</span>
+            </div>
+            <div>
+              <span>Destination:</span>
+              <span>Dubai, UAE</span>
+            </div>
+          </div>
+        )}
 
         {/* Chatbot */}
         <div className="chat-container">
@@ -90,8 +144,7 @@ const ShipmentTracker = () => {
       <div className="right-content">
         {isContentVisible && (
           <>
-            {/* Map Section */}
-            <div className="map-section" style={{ height: "300px", width: "100%" }}>
+            <div className="map-section">
               <MapContainer
                 center={shipmentCoordinates}
                 zoom={13}
@@ -104,7 +157,7 @@ const ShipmentTracker = () => {
               </MapContainer>
             </div>
 
-            {/* Alert Section */}
+            {/* Bottom Row */}
             <div className="info-box">
               <h3>Safety Alerts</h3>
               <p>
@@ -113,32 +166,16 @@ const ShipmentTracker = () => {
               </p>
             </div>
 
-            {/* Time Left Section */}
             <div className="time-left">
               <h2>Time Left</h2>
-              <p className="time">12:39:90 HRS</p>
+              <p className="time">{formatTime(remainingTime)} HRS</p>
             </div>
-            <div className="alert-box">
-              <h2>Shipment Information</h2>
-              <p>
-              <h3>Shipment Details</h3>
-              <ul>
-                <li>Tracking ID: 1123</li>
-                <li>Status: In Transit</li>
-                <li>ETA: June 15, 2023 at 02:30 PM</li>
-                <li>Carrier: FreshExpress Logistics</li>
-                <li>Current Location: Dubai, UAE</li>
-                <li>Origin: Delhi, India</li>
-                <li>Destination: London, UK</li>
-              </ul>
-              </p>
-            </div>
-            {/* Notifications Section */}
+
             <div className="update-box">
               <h2>Notifications</h2>
               <p>
-                ⚠️ Shipment #12345 has been rerouted to avoid the storm, expected
-                to cross Port Kalinga next.
+                ⚠️ Shipment #12345 has been rerouted to avoid the storm, expected to
+                cross Port Kalinga next.
               </p>
             </div>
           </>
