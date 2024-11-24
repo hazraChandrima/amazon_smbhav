@@ -1,12 +1,12 @@
 /* Container styling */
 .notifications-container {
     /* max-width: 1200px; */
-    width: 95vw;
-    margin: 5px 30px;
+    height: 100vh;
+    width: 98vw;
     padding: 5px 5px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #F0F3FF;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .action-button:hover{
@@ -14,11 +14,12 @@ background-color: rgb(66, 219, 66);
 }
 /* Title styling */
 .notifications-title {
-    margin-top: 10px;
-    font-size: 24px;
+    margin-top: 15px;
+    font-size: 35px;
     font-weight: bold;
-    color: #333;
-    text-align: center;
+    color: #000;
+    text-align: left;
+    padding-left: 30px;
     margin-bottom: 20px;
 }
 
@@ -26,7 +27,7 @@ background-color: rgb(66, 219, 66);
 .notifications-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 25px;
 }
 
 /* Individual item styling */
@@ -54,7 +55,7 @@ background-color: rgb(66, 219, 66);
 }
 
 .notification-message {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: #555;
     margin: 0;
@@ -65,3 +66,57 @@ background-color: rgb(66, 219, 66);
     color: #777;
     margin: 5px 0 
 }
+/* Marked as done */
+.notification-done {
+    background-color: #d4edda; /* Light green */
+    border-color: #c3e6cb;
+    color: #0e6f25;
+}
+
+.notification-done .notification-message,
+.notification-done .notification-priority span {
+    color: #155724; /* Dark green for text */
+}
+
+/* Hide the "Mark as done" button when already done */
+.notification-done .mark-done {
+    display: none;
+}
+/* Actions container styling */
+.notification-actions {
+    display: flex; /* Ensures the buttons are arranged in a row */
+    gap: 10px; /* Adds space between buttons */
+}
+
+/* Mark as done button styling */
+.mark-done {
+    padding: 8px 15px;
+    border: none;
+    background-color: #4CAF50; /* Green */
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.mark-done:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Delete button styling */
+.delete {
+    padding: 8px 15px;
+    border: none;
+    background-color: #FF5C5C; /* Red */
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.delete:hover {
+    background-color: #E64545; /* Darker red on hover */
+}
+
