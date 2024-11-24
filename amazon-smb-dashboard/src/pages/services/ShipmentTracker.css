@@ -49,14 +49,70 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: -20px;
 }
+
+/* Map Container */
+.leaflet-container {
+    height: 100%; /* Ensure the map fills its container */
+    width: 100%;
+    position: relative;
+    background: #ddd; /* Fallback background color */
+}
+
+/* Zoom and attribution controls */
+.leaflet-control-zoom,
+.leaflet-control-attribution {
+    font-size: 12px;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Marker default styles */
+.leaflet-marker-icon {
+    width: 50px;
+    height: 41px;
+    background-color: transparent;
+    border: none;
+}
+
+.leaflet-popup-content {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Tooltip */
+.leaflet-tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+}
+
+/* Cross-browser fixes */
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-pane > canvas,
+.leaflet-pane > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .map-section {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    background: #eaeaea;
+    background: #eaeaea; /* Optional: Background for the map container */
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Prevent overflow issues */
+    height: 400px; /* Ensure it takes full grid height */
+    width: 100%; /* Ensure it takes full grid width */
 }
 .map-image {
     width: 100%;
@@ -64,6 +120,73 @@
     object-fit: cover;
     border-radius: 8px;
 }
+
+/* Input Section */
+.input-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  padding-left: 20px; /* Align with the main-heading */
+}
+
+.tracking-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.go-button {
+  background-color: #004aad;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.go-button:hover {
+  background-color: #00307a;
+}
+
+
+
+/* Input Section */
+.input-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding-left: 20px; /* Align with the main-heading */
+  }
+  
+  .tracking-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .go-button {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .go-button:hover {
+    background-color: #00307a;
+  }
+  
 .alert-box {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
