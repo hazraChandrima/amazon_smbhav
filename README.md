@@ -3,7 +3,6 @@
 Expedia is a cutting-edge platform designed to simplify the export process for Indian SMBs selling globally. With an intuitive interface and advanced features, we make managing shipments seamless, efficient, and stress-free. 🌍🚀
 
 ---
-<br/>
 
 ## 🚀 Live Demo
 
