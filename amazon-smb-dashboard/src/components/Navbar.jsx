@@ -1,15 +1,22 @@
-// src/components/Navbar.jsx
 import { Link } from "react-router-dom";
-import "./Navbar.css"; // Import the CSS file
-import logo from "/public/images/logo.png"; // Update the path based on your project structure
+import "./Navbar.css";
+import logo from "/images/logo.png";
 import { IoIosDocument } from "react-icons/io";
 import { IconContext } from "react-icons";
 import { FaShippingFast } from "react-icons/fa";
 import { PiGpsFixBold } from "react-icons/pi";
 import { VscDashboard } from "react-icons/vsc";
-
+import { MdNotifications, MdMessage } from "react-icons/md";
+import { FaUserCircle } from "react-icons/fa";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   return (
     <IconContext.Provider
       value={{ color: "black", size: "2rem", className: "global-class-name" }}
@@ -57,10 +64,42 @@ const Navbar = () => {
               </ul>
             </li>
           </ul>
-          <div className="navbar-actions">
-            <button className="btn login">Log In</button>
-            <button className="btn signup">Sign Up</button>
-          </div>
+          <IconContext.Provider
+            value={{
+              color: "white",
+              size: "1.7em",
+              className: "global-class-name",
+            }}
+          >
+            <div className="navbar-actions">
+              <div className="icon-container">
+                <Link to="/messaging">
+                  <MdMessage />
+                </Link>
+                <span className="badge">2</span>
+              </div>
+              <div className="icon-container">
+                <Link to="/notifications">
+                  <MdNotifications />
+                </Link>
+                <span className="badge">1</span>
+              </div>
+              <div className="icon-container">
+                <Link to="/profile">
+                  <FaUserCircle />
+                </Link>
+              </div>
+              {/* <div className="icon-container" onClick={toggleDropdown}>
+                <FaUserCircle />
+                {showDropdown && (
+                  <div className="user-dropdown">
+                    <Link to="/profile">Profile</Link>
+                    <Link to="/">Logout</Link>
+                  </div>
+                )}
+              </div> */}
+            </div>
+          </IconContext.Provider>
         </div>
       </nav>
     </IconContext.Provider>

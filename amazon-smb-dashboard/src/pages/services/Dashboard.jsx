@@ -6,28 +6,38 @@ import { BsFillFuelPumpFill } from "react-icons/bs";
 import { MdFactory } from "react-icons/md";
 import { RiSkullFill } from "react-icons/ri";
 import { IconContext } from "react-icons";
-//hi
+import { MapContainer, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import * as L from "leaflet";
+
+// Fix default Leaflet marker icon issue
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: "/images/marker-icon-2x.png",
+  iconUrl: "/images/marker-icon.png",
+  shadowUrl: "/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [0, -41],
+  shadowSize: [41, 41],
+});
 
 const Dashboard = () => {
   return (
     <IconContext.Provider
       value={{ color: "black", size: "2.5em", className: "global-class-name" }}
     >
-    
-
       <div className="app">
         <div className="main-content">
           {/* Sidebar */}
           <div className="sidebar">
-          <div className="welcome-message">
-            <FaUser style={{ fontSize: "0.5em", marginBottom: "10px" }} />
-            <span className="welcome-text">
-                <br></br>
+            <div className="welcome-message">
+              <FaUser style={{ fontSize: "0.5em", marginBottom: "10px" }} />
+              <span className="welcome-text">
+                <br />
                 Welcome User!
-            </span>
-          </div>
-
-
+              </span>
+            </div>
 
             <div className="user-id">USER ID: 20034567</div>
 
@@ -54,8 +64,16 @@ const Dashboard = () => {
           {/* Dashboard Content */}
           <div className="dashboard">
             <h2 className="dashboard-title">Dashboard</h2>
-            <div className="map-container">
-              <p>Map goes here</p>
+            
+            {/* Map Section */}
+            <div className="map-container" style={{ height: "220px", width: "100%" }}>
+              <MapContainer
+                center={[19.0760, 72.8777]} // Example coordinates (Mumbai, India)
+                zoom={13}
+                style={{ height: "70%", width: "100%" }}
+              >
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              </MapContainer>
             </div>
 
             {/* Seller Details */}
