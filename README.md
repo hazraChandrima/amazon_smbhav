@@ -6,9 +6,7 @@ Expedia is a cutting-edge platform designed to simplify the export process for I
 
 ## 🚀 Live Demo
 
-- **Frontend**: [Expedia Frontend](https://your-frontend-link.vercel.app)
-- **Backend**: [Expedia Backend](https://your-backend-link.netlify.app)
-
+- **Frontend**: [Expedia Frontend](https://amazon-smbhav.vercel.app/)
 ---
 
 ## 📋 Key Features
@@ -34,26 +32,26 @@ Expedia is a cutting-edge platform designed to simplify the export process for I
 
 This project is built with **Vite+React** and deployed on **Vercel**. Follow the steps below to set it up locally:
 
-# Clone the repository
+### Clone the repository
 ```bash
 git clone https://github.com/hazraChandrima/as_frontend.git
 cd as_frontend
 
 ```
 
-# Install dependencies
+### Install dependencies
 ```bash
 npm install
 ```
 
-# Start the development server
+### Start the development server
 
 ```bash
 npm start
 
 ```
 
-# Open your browser and navigate to
+### Open your browser and navigate to
 ```bash
 http://localhost:5173
 ```
