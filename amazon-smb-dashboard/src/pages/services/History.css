@@ -1,7 +1,7 @@
 /* General Styles */
 .shipment-timeline {
   width: 96vw;
-  height: 100vh;
+  /* height: 100vh; */
   padding: 20px;
   background-color: #F0F3FF;
   border-radius: 10px;

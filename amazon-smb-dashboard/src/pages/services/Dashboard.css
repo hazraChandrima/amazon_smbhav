@@ -1,341 +1,272 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
-  /* html, body {
-    /* margin: 0;
-    padding: 0;
-    overflow: hidden; 
-    height: 100%; 
-    width: 100%; 
-    background-color: F0F3FF;
-}  */
-
-/* App Layout */
+/* Global Styles */
 .app {
     font-family: 'Hanken Grotesk', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: F0F3FF;
-  }
-  
-  .main-content {
+    background-color: white;
     display: flex;
-    height: 80%; /* Full height */
-    width: 98.7vw; /* Full width */
-    overflow: hidden; /* Prevent any scrollbars */
-  }
-  
-  h1, h2, h3, h4, p {
+    justify-items: space-evenly;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row !important;
+    gap: 20px;
+    width: 98vw !important;
+}
+
+h1, h2, h3, h4, p {
     margin: 0;
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    width: 17%; /* Sidebar occupies 20% of the screen width */
-    background-color: #F0F3FF;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 17%;
+    background-color: #ffffff;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     box-sizing: border-box;
-  }
-  .dashboard-title {
-    /* margin-top: 3px; */
-    font-size: 40px; /* Large font size */
-    font-weight: bold; /* Bold text */
-    text-align: left; /* Center the text horizontally */
-    color: #000; /* Black text color */
-  }
-  
-  
-/* Welcome Message */
-  .welcome-message {
-    font-size: 18px; /* Slightly larger font */
-    font-weight: bold; /* Emphasize the welcome text */
-    color: #000; /* Black color */
-    margin-bottom: 5px; /* Add spacing below the welcome text */
-    text-align: center; /* Center align the text */
-    display: flex;
-    flex-direction: column; /* Stack icon and text vertically */
-    align-items: center; /* Center both icon and text horizontally */
-    gap: 10px; /* Add space between icon and text */
-  }
+}
 
-  .welcome-text {
+.dashboard-title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    color: #000;
+}
+
+/* Welcome Message */
+.welcome-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-text {
     margin-top: -40px;
     font-size: 16px;
     font-weight: bold;
-    color: #000; /* Black color for text */
-    /* line-height: 1.5; Adjust spacing between "Welcome" and "User" */
-  }
-  
-  
-  /* User ID */
-  .user-id {
+    color: #000;
+}
+
+/* User ID */
+.user-id {
     font-weight: bold;
     padding: 10px;
     background-color: #FF9900;
-    border-radius: 15px; /* Curved edges */
+    border-radius: 15px;
     text-align: center;
     color: white;
-    margin-bottom: 5px; /* Spacing below the User ID container */
-  }
-  
-  /* Sidebar Menu Container */
-  .menu-container {
+    margin-bottom: 5px;
+}
+
+/* Sidebar Menu */
+.menu-container {
     padding: 10px;
-    border: 2px solid #FF9900; /* Border color */
-    border-radius: 15px; /* Rounded edges */
-    background-color: #fff; /* White background for the container */
+    border: 2px solid #FF9900;
+    border-radius: 15px;
+    background-color: #fff;
     box-sizing: border-box;
     margin-bottom: -10px;
-  }
+}
 
-  /* Recent Trips Container */
+/* Recent Trips */
 .recent-trips-container {
     padding: 18px;
-    border: 2px solid #FF9900; /* Border color */
-    border-radius: 15px; /* Rounded edges */
-    background-color: #fff; /* White background */
+    border: 2px solid #FF9900;
+    border-radius: 15px;
+    background-color: #fff;
     box-sizing: border-box;
     margin-top: 10px;
-  }
-  
-  /* Recent Trips Heading */
-  .recent-trips h3 {
+}
+
+.recent-trips h3 {
     margin: 0 0 10px 0;
     font-weight: bold;
-    color: #000000; /* Heading matches theme color */
-  }
-  
-  /* Recent Trips List Items */
-  .recent-trips p {
+    color: #000;
+}
+
+.recent-trips p {
     margin: 5px 0;
     font-size: 14px;
-    color: black; /* Default text color */
-  }
-  
-  /* Highlighted Recent Trip */
-  .recent-trips .highlighted-trip {
-    color: #FF9900; /* Orange color for highlighted text */
-    text-decoration: underline; /* Underline for emphasis */
-    font-weight: bold; /* Make it stand out */
-  }
-  
-  /* Sidebar Menu */
-  .menu {
+    color: black;
+}
+
+.recent-trips .highlighted-trip {
+    color: #FF9900;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Sidebar Menu */
+.menu {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-  
-  .menu-item {
-    padding: 10px 10px; /* Adjust padding for box size */
-    border: 2px solid transparent; /* Default border transparent */
+}
+
+.menu-item {
+    padding: 10px 10px;
+    border: 2px solid transparent;
     text-align: center;
     border-radius: 5px;
-    background-color: #ffffff; /* White background for unselected menu items */
+    background-color: #ffffff;
     color: #000;
     cursor: pointer;
     box-sizing: border-box;
-  }
-  
-  .menu-item.highlighted {
-    background-color: #FF9900; /* Highlighted background color */
-    color: white; /* Highlighted text color */
-    border-color: #FF9900; 
-  }
-  
-  .menu-item:hover {
+}
+
+.menu-item.highlighted {
+    background-color: #FF9900;
+    color: white;
+    border-color: #FF9900;
+}
+
+.menu-item:hover {
     background-color: #FFE5B4;
     color: black;
-  }
-  
-  /* Recent Trips */
-  .recent-trips h3 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-  }
-  
-  /* Dashboard Content */
-  .dashboard {
-    flex: 1; /* Dashboard takes up the remaining 80% of the screen */
+}
+
+/* Dashboard Content */
+.dashboard {
+    width: 96%;
     padding: 10px;
-    background-color: #F0F3FF;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     overflow: hidden;
     margin-bottom: 10px;
-  }
-  
-  .map-container {
+}
+
+/* Map Container */
+.map-container {
     background-color: #e0e0e0;
-    height: 220px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 12px;
     margin-bottom: 10px;
-    flex-shrink: 0; /* Prevent shrinking */
-    height: 400px; /* Set the desired height here */
+    flex-shrink: 0;
+    height: 215px;
     width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-  
-  /* Seller Details Section */
-.seller-details {
-    background-color: #fff; /* White background */
-    padding: 10px; /* Spacing around the container */
-    border-radius: 10px; /* Rounded edges */
-    border: 2px solid #000000; /* Black border */
-    margin-bottom: 5px; /* Spacing below */
-    text-align: left; /* Align content to the left */
 }
 
-/* Seller Details Heading */
+/* Seller Details */
+.seller-details {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
 .seller-details h3 {
     margin: 0;
     font-size: 16px;
     font-weight: bold;
-    color: #000000; /* Black text */
-    margin-bottom: 5px; /* Space below the heading */
-    text-align: left;
+    color: #000;
+    margin-bottom: 5px;
 }
 
-/* Ravi Label */
 .seller-details .ravi-label {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #000000; /* Black text */
-    text-align: left; /* Align text to the left */
+    color: #000;
 }
 
-/* Seller Details Content */
 .details-grid {
     display: flex;
-    justify-content: space-between; /* Horizontal spacing */
-    align-items: center; /* Center vertically */
-    gap: 10px;
-    font-size: 14px; /* Adjust font size */
-    color: #000000; /* Black text */
-    background-color: #FFE7C2; /* Light orange background */
-    border-radius: 10px; /* Rounded edges */
-    padding: 10px; /* Spacing around content */
-}
-
-  
-/* Metrics Section */
-/* Metrics Section */
-.metrics {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 columns for one row */
-    gap: 3px; /* Reduced gap between boxes */
-  }
-  
-  .metrics-card {
-    height: 140px; /* Increased height */
-    width: 190px; /* Increased width */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center; /* Center-align text */
-    background-color: #fff; /* Default background */
-    border: 2px solid #FF9900; /* Orange border */
-    color: #000000; /* Black text */
-    box-sizing: border-box;
-    padding: 25px; /* Increased padding for text */
-    font-size: 16px; /* Adjusted font size for readability */
-    line-height: 1.2; /* Adjusted line spacing */
+    gap: 10px;
+    font-size: 14px;
+    color: #000;
+    background-color: #FFE7C2;
     border-radius: 10px;
-    gap: 2px; /* Add spacing between icon and text */
-  }
-
-.icon-container {
-  margin-bottom: 10px; /* Space between the icon and title */
+    padding: 10px;
 }
 
-  .metrics-card:nth-child(odd) {
-    background-color: #FF9900; /* Alternate orange background */
-    color: #fff; /* White text for better contrast */
-  }
-  
-  .metrics-card h4 {
-    margin: 5px 0; /* Reduced margin */
-    font-size: 16px; /* Adjusted heading size */
-  }
-  
-  .metrics-card p {
-    margin: 0; /* Remove padding between lines */
-    font-size: 18px; /* Slightly larger for the value */
-    font-weight: bold;
-  }
-  
-  
-  /* Seller Details Section */
-.seller-details {
-    background-color: #fff; /* White background */
-    padding: 20px; /* Spacing around the container */
-    border-radius: 10px; /* Rounded edges */
-    border: 2px solid #000000; /* Black border */
-    margin-bottom: px; /* Spacing below */
+.details-grid div {
+    flex: 1;
     text-align: center;
-  }
-  
-  /* Seller Details Heading */
-  .seller-details h3 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #000000; /* Black text */
-  }
-  
-  /* Ravi Label */
-  .seller-details .ravi-label {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    display: block;
-    color: #000000; /* Black text */
-  }
-  
-  /* Seller Details Content */
-  .details-grid {
-    display: flex;
-    justify-content: space-between; /* Horizontal spacing */
-    align-items: center; /* Center vertically */
-    gap: 10px;
-    font-size: 14px; /* Adjust font size */
-    color: #000000; /* Black text */
-    background-color: #FFE7C2; /* Light orange background */
-    border-radius: 10px; /* Rounded edges */
-    padding: 8px; /* Spacing around content */
-  }
-  
-  .details-grid div {
-    flex: 1; /* Evenly distribute space */
-    text-align: center; /* Center each content block */
     position: relative;
-  }
-  
-  .details-grid div:not(:last-child)::after {
+}
+
+.details-grid div:not(:last-child)::after {
     content: '';
     position: absolute;
     right: 0;
     top: 15%;
     bottom: 15%;
-    width: 1px; /* Thin vertical line */
-    background-color: #000000; /* Black color for line */
-  }
-  
-  
-  
-  
+    width: 1px;
+    background-color: #000;
+}
+
+/* Metrics Section */
+.metrics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.metrics-card {
+    height: 140px;
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid #FF9900;
+    color: #000;
+    box-sizing: border-box;
+    padding: 25px;
+    font-size: 16px;
+    line-height: 1.2;
+    border-radius: 10px;
+    gap: 2px;
+}
+
+.icon-container {
+    margin-bottom: 10px;
+}
+
+.metrics-card:nth-child(odd) {
+    background-color: #FF9900;
+    color: #fff;
+}
+
+.metrics-card h4 {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.metrics-card p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* History Section */
+.history {
+    color: #000;
+}

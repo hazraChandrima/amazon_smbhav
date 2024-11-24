@@ -2,6 +2,7 @@
   padding: 20px;
   font-family: Arial, sans-serif;
   color: black;
+  
 }
 
 .query-header {
@@ -52,9 +53,9 @@
   background-color: #f4f4f4;
 }
 
-.main-content {
-  display: flex;
-  flex-direction: column;
+.main-contentf {
+  /* display: flex;
+  flex-direction: column !important; */
   gap: 20px;
   width: 90vw;
 }

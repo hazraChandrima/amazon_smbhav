@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Dashboard.css";
 import { FaUser, FaBusinessTime } from "react-icons/fa";
 import { FaTruckFast, FaMoneyBills } from "react-icons/fa6";
 import { BsFillFuelPumpFill } from "react-icons/bs";
@@ -10,6 +9,8 @@ import { IconContext } from "react-icons";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet";
+import "./Dashboard.css";
+
 
 // Fix default Leaflet marker icon issue
 delete L.Icon.Default.prototype._getIconUrl;
@@ -47,7 +48,9 @@ const Dashboard = () => {
                 <li className="menu-item highlighted">Dashboard</li>
                 <li className="menu-item">Shipment</li>
                 <li className="menu-item">Analysis</li>
-                <li className="menu-item"><Link to="/services/dashboard/history">History</Link></li>
+                <li className="menu-item">
+                  <Link to="/services/dashboard/history" className="history">History</Link>
+                </li>
                 <li className="menu-item">Notifications</li>
               </ul>
             </div>
@@ -65,13 +68,15 @@ const Dashboard = () => {
           {/* Dashboard Content */}
           <div className="dashboard">
             <h2 className="dashboard-title">Dashboard</h2>
-            
+
             {/* Map Section */}
-            <div className="map-container" style={{ height: "220px", width: "100%" }}>
+            <div
+              className="map-container"
+            >
               <MapContainer
-                center={[19.0760, 72.8777]} // Example coordinates (Mumbai, India)
+                center={[19.076, 72.8777]} // Example coordinates (Mumbai, India)
                 zoom={13}
-                style={{ height: "70%", width: "100%" }}
+                style={{ height: "100%", width: "100%" }}
               >
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               </MapContainer>

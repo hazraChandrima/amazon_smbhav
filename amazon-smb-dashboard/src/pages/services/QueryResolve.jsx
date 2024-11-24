@@ -164,7 +164,7 @@ const QueryResolve = () => {
         </div>
       </header>
 
-      <div className="main-content">
+      <div className="main-contentf">
         <table className="query-table">
           <thead>
             <tr>
