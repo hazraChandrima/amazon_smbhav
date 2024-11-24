@@ -9,6 +9,7 @@ import HomeComponent from "./pages/HomeComponent";
 import Messaging from "./pages/Messaging";
 import Notifications from "./pages/Notifications";
 import History from "./pages/services/History";
+import QueryResolve from "./pages/services/QueryResolve";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/messaging" element={<Messaging />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/services/dashboard/history" element={<History />} />
+          <Route path="/services/queries" element={<QueryResolve />} />
         </Routes>
       </div>
     </Router>

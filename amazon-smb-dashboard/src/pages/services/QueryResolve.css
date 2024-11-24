@@ -1,0 +1,77 @@
+.query-management {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.query-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar {
+  padding: 5px;
+}
+
+.new-query-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.query-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.query-table th,
+.query-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.priority-high {
+  color: red;
+}
+
+.priority-medium {
+  color: orange;
+}
+
+.priority-low {
+  color: green;
+}
+
+.status-open {
+  color: red;
+}
+
+.status-inprogress {
+  color: orange;
+}
+
+.status-resolved {
+  color: green;
+}
+
+.overview-metrics {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.query-graphs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

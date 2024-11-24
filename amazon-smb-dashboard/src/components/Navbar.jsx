@@ -8,6 +8,7 @@ import { PiGpsFixBold } from "react-icons/pi";
 import { VscDashboard } from "react-icons/vsc";
 import { MdNotifications, MdMessage } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
+import { MdOutlineQueryBuilder } from "react-icons/md";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -60,6 +61,10 @@ const Navbar = () => {
                 <li>
                   <VscDashboard />
                   <Link to="/services/dashboard">Dashboard</Link>
+                </li>
+                <li>
+                  <MdOutlineQueryBuilder />
+                  <Link to="/services/queries">Query Resolution</Link>
                 </li>
               </ul>
             </li>
