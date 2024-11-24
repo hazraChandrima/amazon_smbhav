@@ -1,8 +1,37 @@
 import React, { useState } from "react";
 import { Pie, Bar } from "react-chartjs-2";
-import "./QueryResolve.css"
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+} from "chart.js";
+import "./QueryResolve.css";
+
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale
+);
 
 const QueryResolve = () => {
+
+    const pieOptions = {
+      responsive: false, // Disable dynamic resizing
+      maintainAspectRatio: false, // Prevent aspect ratio enforcement
+    };
+
+    const barOptions = {
+      responsive: false,
+      maintainAspectRatio: false,
+    };
+
   const [queries, setQueries] = useState([
     {
       id: "Q00123",
@@ -134,58 +163,64 @@ const QueryResolve = () => {
           </button>
         </div>
       </header>
-      <table className="query-table">
-        <thead>
-          <tr>
-            <th>Query ID</th>
-            <th>Importer Name</th>
-            <th>Category</th>
-            <th>Priority</th>
-            <th>Status</th>
-            <th>Last Updated</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredQueries.map((query) => (
-            <tr key={query.id}>
-              <td>{query.id}</td>
-              <td>{query.importer}</td>
-              <td>{query.category}</td>
-              <td className={`priority-${query.priority.toLowerCase()}`}>
-                {query.priority}
-              </td>
-              <td
-                className={`status-${query.status
-                  .replace(" ", "")
-                  .toLowerCase()}`}
-              >
-                {query.status}
-              </td>
-              <td>{query.lastUpdated}</td>
+
+      <div className="main-content">
+        <table className="query-table">
+          <thead>
+            <tr>
+              <th>Query ID</th>
+              <th>Importer Name</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Last Updated</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="overview-metrics">
-        <div>
-          <h3>Overview Metrics</h3>
-          <p>Total Queries: {queries.length}</p>
-          <p>
-            Open Queries: {queries.filter((q) => q.status === "Open").length}
-          </p>
-          <p>
-            In Progress Queries:{" "}
-            {queries.filter((q) => q.status === "In Progress").length}
-          </p>
-          <p>
-            Resolved Queries:{" "}
-            {queries.filter((q) => q.status === "Resolved").length}
-          </p>
-        </div>
-        <div className="query-graphs">
-          <h3>Query Distribution</h3>
-          <Pie data={pieData} />
-          <Bar data={barData} />
+          </thead>
+          <tbody>
+            {filteredQueries.map((query) => (
+              <tr key={query.id}>
+                <td>{query.id}</td>
+                <td>{query.importer}</td>
+                <td>{query.category}</td>
+                <td className={`priority-${query.priority.toLowerCase()}`}>
+                  {query.priority}
+                </td>
+                <td
+                  className={`status-${query.status
+                    .replace(" ", "")
+                    .toLowerCase()}`}
+                >
+                  {query.status}
+                </td>
+                <td>{query.lastUpdated}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div className="overview-graphs">
+          <div className="overview-metrics">
+            <h3>Overview Metrics</h3>
+            <p>Total Queries: {queries.length}</p>
+            <p>
+              Open Queries: {queries.filter((q) => q.status === "Open").length}
+            </p>
+            <p>
+              In Progress Queries:{" "}
+              {queries.filter((q) => q.status === "In Progress").length}
+            </p>
+            <p>
+              Resolved Queries:{" "}
+              {queries.filter((q) => q.status === "Resolved").length}
+            </p>
+          </div>
+          <div>
+            <h3>Query Distribution</h3>
+            <div className="query-graphs">
+              <Pie data={pieData} options={pieOptions} />
+              <Bar data={barData} options={barOptions} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
