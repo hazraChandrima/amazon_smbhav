@@ -21,16 +21,15 @@ ChartJS.register(
 );
 
 const QueryResolve = () => {
+  const pieOptions = {
+    responsive: false,
+    maintainAspectRatio: false,
+  };
 
-    const pieOptions = {
-      responsive: false, // Disable dynamic resizing
-      maintainAspectRatio: false, // Prevent aspect ratio enforcement
-    };
-
-    const barOptions = {
-      responsive: false,
-      maintainAspectRatio: false,
-    };
+  const barOptions = {
+    responsive: false,
+    maintainAspectRatio: false,
+  };
 
   const [queries, setQueries] = useState([
     {
@@ -164,7 +163,7 @@ const QueryResolve = () => {
         </div>
       </header>
 
-      <div className="main-content">
+      <div className="main-contentf">
         <table className="query-table">
           <thead>
             <tr>
@@ -214,7 +213,7 @@ const QueryResolve = () => {
               {queries.filter((q) => q.status === "Resolved").length}
             </p>
           </div>
-          <div>
+          <div className="overview-metrics">
             <h3>Query Distribution</h3>
             <div className="query-graphs">
               <Pie data={pieData} options={pieOptions} />
