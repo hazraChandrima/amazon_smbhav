@@ -1,135 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 /* Global styles */
 body {
-  background-color: #f0f4fc;
+  background-color: #eef2f8;
   margin: 0;
   padding-top: 75px;
   box-sizing: border-box;
+  font-family: 'Hanken Grotesk', sans-serif;
 }
 
-/* Main container with full width */
+/* Main container with responsive padding */
 .comparison-container {
-  width: 96.3vw;
+  width: 96vw;
+  height: 100vh;
+  margin: 0 auto;
   color: #1a202c;
   padding: 20px;
-  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Title styling */
 .title {
-  margin-left: 8px;
   text-align: left;
-  color: #1a202c;
-  margin-bottom: 30px;
-  font-size: 45px;
-  font-weight: bold;
-}
-
-/* Filters section for the new layout */
-.filters {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns for dropdowns */
-  gap: 25px 15px; /* Larger vertical gap for zip code alignment */
-  justify-items: center; /* Center-align items in their grid cells */
+  color: #000;
   margin-bottom: 20px;
+  font-size: 37px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
 
-/* Group dropdowns and zip codes */
-.filter-group {
-  display: grid;
-  grid-template-rows: auto auto; /* Stack items vertically */
-  gap: 12px; /* Increased gap for space between dropdown and zip code */
-  width: 100%; /* Full width for responsiveness */
-}
 
-/* Style for dropdowns and zip code inputs */
-.filter,
-.filter-input {
-  padding: 8px 10px; /* Reduced padding for consistent height */
-  border: 1px solid #d1d5db;
-  border-radius: 30px;
-  font-size: 14px;
-  color: #1a202c;
-  background-color: #fff;
-  width: 100%; /* Full width inside the grid */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better visual appeal */
-}
-
-.filter-input {
-  width: 94%;
-  padding: 10px; /* Slightly larger padding for input fields */
-}
-
-/* Adjusted height for Parcel Weight and Item Type */
-.filter {
-  height: 40px;
-  padding: 6px 10px; /* Reduced padding for height consistency */
-}
-
-/* Add hover effect for better interactivity */
+/* Hover and focus effects for inputs */
 .filter:hover,
-.filter-input:hover {
-  background-color: antiquewhite;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+.filter:focus {
+  border-color: #3182ce;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Increased width for Destination dropdown */
-.a1 {
-  margin-top: 0;
-  padding-top: 0;
+/* Buttons styling */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
-/* Results table styles */
+.generate-button,
+.reset-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+
+.generate-button {
+  background-color: #FF9900;
+}
+
+.generate-button:hover {
+  background-color: #fff;
+  border: 2px solid black;
+  color: #000;
+}
+
+.reset-button {
+  background-color: #232F3E;
+}
+
+.reset-button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid black;
+}
+
+/* Results table */
 .results-table {
   width: 100%;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .table-header,
 .table-row {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  padding: 15px;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 15px 10px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center;
 }
 
 .table-header {
-  background-color: #f9fafb;
+  background-color: #edf2f7;
   font-weight: bold;
+  font-size: 16px;
 }
 
 .table-row:nth-child(even) {
-  background-color: #f1f5f9;
+  background-color: #f7fafc;
 }
 
 .table-row:hover {
-  background-color: #e2e8f0;
+  background-color: #ebf4ff;
 }
 
 .table-row span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   font-size: 14px;
+  color: #2d3748;
 }
 
-/* Adjust responsiveness */
+/* Error message styling */
+.error-message {
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+/* Media queries for responsiveness */
 @media (max-width: 1024px) {
   .filters {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .filter-group {
-    max-width: 100%; /* Allow full width stacking */
+  .table-header,
+  .table-row {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .filters {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
-    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+/* Filters section with rows */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
+/* Filter row for two aligned rows */
+.filter-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Filter group */
+.filter-group {
+  flex-grow: 1;
+  min-width: 250px; /* Adjust minimum width */
+  max-width:330px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter {
+  padding: 10px 15px;
+  border: 1px solid #cbd5e0;
+  border-radius: 30px;
+  font-size: 14px;
+  color: #1a202c;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive behavior remains consistent */
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+/* Filter Label Styling */
+.filter-label {
+  font-size: 18px; /* Matches the desired size */
+  font-weight: 500; /* Semi-bold for emphasis */
+  color: #4a5568; /* Neutral gray */
+  margin-bottom: 0px; /* Small space between label and dropdown */
+  display: block; /* Ensures full-width alignment */
+  text-align: left; /* Align text to center horizontally */
+  padding-left: 7px;
+}
+
+.buttons-group {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center; /* Center align the buttons */
+  gap: 20px; /* Space between the buttons */
+  margin-top: 30px; /* Add some space above the buttons */
+  margin-bottom: 15px; /* Add some space below the buttons */
+}
+
+.modal-content h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.submit-button,
+.close-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.submit-button {
+  background-color: #FF9900;
+  color: #fff;
+}
+
+.close-button {
+  background-color: #232F3E;
+  color: #fff;
+}
+
+.response {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.negotiate-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.negotiate-button:hover {
+  background-color: #0056b3;
+}
+.results-table .table-header,
+.results-table .table-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Adjust for 7 columns */
+  gap: 10px;
+  align-items: center;
+}
+
+.results-table .negotiate-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.results-table .negotiate-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Style for Market Trend Section inside the Modal */
+.market-trend {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Close and Cancel Buttons */
+.close-button, .submit-button {
+  margin-top: 15px;
+}
+
+/* Overlay Effect when Modal is Open */
+.negotiation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Transparent dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure it's on top of other content */
+}
+
+/* Modal Content Styling */
+.modal-content {
+  background: white; /* White background for the modal */
+  padding: 20px;
+  border-radius: 10px;
+  width: 450px; /* Set a fixed width for the modal */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center content inside the modal */
+}
+
+/* Style for Market Trend Section inside the Modal */
+.market-trend {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Close and Cancel Buttons */
+.close-button, .submit-button {
+  margin-top: 15px;
+}
+
