@@ -84,7 +84,12 @@ const Navbar = () => {
                 </Link>
                 <span className="badge">1</span>
               </div>
-              <div className="icon-container" onClick={toggleDropdown}>
+              <div className="icon-container">
+                <Link to="/profile">
+                  <FaUserCircle />
+                </Link>
+              </div>
+              {/* <div className="icon-container" onClick={toggleDropdown}>
                 <FaUserCircle />
                 {showDropdown && (
                   <div className="user-dropdown">
@@ -92,7 +97,7 @@ const Navbar = () => {
                     <Link to="/">Logout</Link>
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
           </IconContext.Provider>
         </div>
