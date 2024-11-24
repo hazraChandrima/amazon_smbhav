@@ -6,7 +6,7 @@ Expedia is a cutting-edge platform designed to simplify the export process for I
 
 ## 🚀 Live Demo
 
-- **Frontend**: [Expedia Frontend](https://amazon-smbhav.vercel.app/)
+- **Frontend**: [Expedia](https://amazon-smbhav.vercel.app/)
 ---
 
 ## 📋 Key Features
@@ -35,7 +35,7 @@ This project is built with **Vite+React** and deployed on **Vercel**. Follow the
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/hazraChandrima/as_frontend.git
-cd as_frontend
+cd as_frontend/amazon-smb-dashboard
 
 ```
 
@@ -47,8 +47,7 @@ npm install
 ### 3. Start the development server
 
 ```bash
-npm start
-
+npm run dev
 ```
 
 ### 4. Open your browser and navigate to
@@ -63,6 +62,8 @@ http://localhost:5173
 ## 🛠️ Backend Setup
 
 The backend is deployed on **Netlify** and handles data processing, API integrations, and business logic. Check the backend folder for more details.
+
+[Backend Repository](https://github.com/hemanvithapullela0456/as_backend)
 
 ---
 
@@ -85,19 +86,7 @@ The backend is deployed on **Netlify** and handles data processing, API integrat
 
 ## 💻 Contributors
 
-
-Avani Gupta: [GitHub Profile](https://github.com/guptaavani111)
-
-Chandrima Hazra: [GitHub Profile](https://github.com/hazraChandrima)
-
-Hemanvitha Pullela: [GitHub Profile](https://github.com/hemanvithapullela0456)
-
-Jaya Kumari: [GitHub Profile](https://github.com/jaya005)
-
-
-
-## 📜 License
-
-
-This project is licensed under the MIT License.
-
+- [Avani Gupta](https://github.com/guptaavani111)
+- [Chandrima Hazra](https://github.com/hazraChandrima)
+- [Hemanvitha Pullela](https://github.com/hemanvithapullela0456)
+- [Jaya Kumari](https://github.com/jaya005)
