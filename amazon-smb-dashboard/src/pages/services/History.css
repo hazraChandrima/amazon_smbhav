@@ -1,0 +1,24 @@
+.MuiTimelineItem-root {
+    padding-left: 20px;
+  }
+  
+  .MuiTimelineConnector-root {
+    background-color: #00a896;
+  }
+  
+  .MuiTimelineDot-root {
+    border: 2px solid #00a896;
+    background-color: white;
+  }
+  
+  .MuiTimelineDot-root.Mui-selected {
+    background-color: #00a896;
+  }
+  
+  .MuiTimelineContent-root {
+    padding-left: 16px;
+  }
+  .shipment-timeline{
+    margin-left: 250px;
+    padding-left: 100px;
+  }
