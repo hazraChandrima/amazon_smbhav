@@ -8,8 +8,8 @@ import Dashboard from "./pages/services/Dashboard";
 import HomeComponent from "./pages/HomeComponent";
 import Messaging from "./pages/Messaging";
 import Notifications from "./pages/Notifications";
+import History from "./pages/services/History";
 
-//hey its me
 function App() {
   return (
     <Router>
@@ -32,6 +32,7 @@ function App() {
           <Route path="/services/dashboard" element={<Dashboard />} />
           <Route path="/messaging" element={<Messaging />} />
           <Route path="/notifications" element={<Notifications />} />
+          <Route path="/services/dashboard/history" element={<History />} />
         </Routes>
       </div>
     </Router>

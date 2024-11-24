@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import { FaUser, FaBusinessTime } from "react-icons/fa";
 import { FaTruckFast, FaMoneyBills } from "react-icons/fa6";
@@ -46,7 +47,7 @@ const Dashboard = () => {
                 <li className="menu-item highlighted">Dashboard</li>
                 <li className="menu-item">Shipment</li>
                 <li className="menu-item">Analysis</li>
-                <li className="menu-item">History</li>
+                <li className="menu-item"><Link to="/services/dashboard/history">History</Link></li>
                 <li className="menu-item">Notifications</li>
               </ul>
             </div>
