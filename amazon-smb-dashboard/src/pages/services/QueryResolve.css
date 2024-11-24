@@ -2,7 +2,8 @@
   padding: 20px;
   font-family: Arial, sans-serif;
   color: black;
-  
+  background-color: rgb(238, 241, 245);
+  width:95.8vw;
 }
 
 .query-header {
@@ -17,15 +18,17 @@
   gap: 10px;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 8px;
+  /* margin-left: 20px; */
 }
 
 .search-bar {
   padding: 5px;
   font-size: 14px;
   flex: 1;
-  background-color: white; /* Change input background to white */
-  border: 1px solid #ddd; /* Add a border for better visibility */
-  border-radius: 4px; /* Optional: Add rounded corners */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 .new-query-btn {
@@ -44,41 +47,51 @@
 
 .query-table th,
 .query-table td {
-  border: 1px solid #ddd;
+  border: 1px solid #b3b3b3;
   padding: 8px;
   text-align: left;
 }
 
 .query-table th {
-  background-color: #f4f4f4;
+  background-color: #ffffff;
 }
 
 .main-contentf {
-  /* display: flex;
-  flex-direction: column !important; */
   gap: 20px;
-  width: 90vw;
-}
-
-.query-graphs {
-  display: flex; /* Use flexbox to align items horizontally */
-  justify-content: center; /* Center the charts horizontally */
-  align-items: center; /* Align charts vertically in the center */
-  gap: 20px; /* Adjust spacing between the charts */
-  width: 100%; /* Use the full width of the container */
-}
-
-.query-graphs canvas {
-  width: 600px; /* Increase the width for larger graphs */
-  height: 400px; /* Increase the height for larger graphs */
+  width: 96vw;
 }
 
 .overview-graphs {
   display: flex;
   flex-direction: row;
+  /* justify-content: space-between; */
+  gap: 20px;
   width: 100%;
 }
 
 .overview-metrics {
-  min-width: 200px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 25%;
+}
+.query-graphs {
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* flex:1; */
+}
+
+.query-graphs canvas {
+  width: 400px !important;
+  height: 200px !important;
+}
+
+.overview-metrics h3,
+.query-graphs h3 {
+  margin-bottom: 10px;
 }

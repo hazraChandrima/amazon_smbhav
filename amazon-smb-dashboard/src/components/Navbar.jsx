@@ -78,17 +78,18 @@ const Navbar = () => {
           >
             <div className="navbar-actions">
               <div className="icon-container">
+                <Link to="/notifications">
+                  <MdNotifications />
+                </Link>
+                <span className="badge">5</span>
+              </div>
+              <div className="icon-container">
                 <Link to="/messaging">
                   <MdMessage />
                 </Link>
                 <span className="badge">2</span>
               </div>
-              <div className="icon-container">
-                <Link to="/notifications">
-                  <MdNotifications />
-                </Link>
-                <span className="badge">1</span>
-              </div>
+
               <div className="icon-container">
                 <Link to="/profile">
                   <FaUserCircle />

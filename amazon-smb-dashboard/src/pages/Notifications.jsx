@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./Notifications.css";
+import { IconContext } from "react-icons";
+import { MdDone } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 
 const Notifications = () => {
     const [notifications, setNotifications] = useState([
@@ -35,46 +38,54 @@ const Notifications = () => {
     };
 
     return (
+      <IconContext.Provider
+        value={{
+          color: "white",
+          size: "1.5rem",
+          className: "global-class-name",
+        }}
+      >
         <div className="notifications-container">
-            <h2 className="notifications-title">Shipment Notifications</h2>
-            <ul className="notifications-list">
-                {notifications.map(({ id, message, priority, done }) => (
-                    <li
-                        key={id}
-                        className={`notifications-item ${priorityClasses[priority]} ${
-                            done ? "notification-done" : ""
-                        }`}
+          <h2 className="notifications-title">Shipment Notifications</h2>
+          <ul className="notifications-list">
+            {notifications.map(({ id, message, priority, done }) => (
+              <li
+                key={id}
+                className={`notifications-item ${priorityClasses[priority]} ${
+                  done ? "notification-done" : ""
+                }`}
+              >
+                <div className="notification-content">
+                  <p className="notification-message">{message}</p>
+                  <p className="notification-priority">
+                    Priority: <span>{priority}</span>
+                  </p>
+                </div>
+                <div className="notification-actions">
+                  {!done && (
+                    <button
+                      className="action-button mark-done"
+                      aria-label={`Mark notification "${message}" as done`}
+                      title="Mark as done"
+                      onClick={() => handleMarkDone(id)}
                     >
-                        <div className="notification-content">
-                            <p className="notification-message">{message}</p>
-                            <p className="notification-priority">
-                                Priority: <span>{priority}</span>
-                            </p>
-                        </div>
-                        <div className="notification-actions">
-                            {!done && (
-                                <button
-                                    className="action-button mark-done"
-                                    aria-label={`Mark notification "${message}" as done`}
-                                    title="Mark as done"
-                                    onClick={() => handleMarkDone(id)}
-                                >
-                                    ✔
-                                </button>
-                            )}
-                            <button
-                                className="action-button delete"
-                                aria-label={`Delete notification "${message}"`}
-                                title="Delete"
-                                onClick={() => handleDelete(id)}
-                            >
-                                🗑
-                            </button>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+                      <MdDone/>
+                    </button>
+                  )}
+                  <button
+                    className="action-button delete"
+                    aria-label={`Delete notification "${message}"`}
+                    title="Delete"
+                    onClick={() => handleDelete(id)}
+                  >
+                    <MdDelete/>
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
+      </IconContext.Provider>
     );
 };
 
