@@ -1,17 +1,17 @@
 /* src/components/Navbar.css */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #232f3e;
-    color: white;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #232f3e;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 /*hello*/
 
-  /* .navbar-container {
+/* .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,150 +20,201 @@
     padding: 16px 0px;
   }
    */
-  .navbar-logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-  
-  .navbar-menu {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar-menu li {
-    position: relative;
-  }
-  
-  .navbar-menu li span {
-    cursor: pointer;
-    font-size: 1rem;
-    transition: color 0.2s;
-  }
-  
-  .navbar-menu li span:hover {
-    color: #ff9900;
-  }
-  
-  .navbar-dropdown .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    color: black;
-    display: none;
-    flex-direction: column;
-    min-width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 8px 0;
-    border-radius: 5px;
-  }
-  
-  .navbar-dropdown:hover .dropdown-menu {
-    display: flex;
-    list-style: none;
-  }
-  
-    .dropdown-menu li {
-      display: flex;
-      /* Use flexbox to align icon and text */
-      align-items: center;
-      /* Vertically align items */
-      gap: 10px;
-      /* Add spacing between the icon and text */
-      padding: 10px 20px;
-      list-style: none;
-      /* Ensure no bullets */
-      transition: background 0.3s;
-      /* Smooth hover effect */
-    }
-  
-  .dropdown-menu li:hover {
-    background: #f1f1f1;
-  }
-  
-  .navbar-actions {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .btn {
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  .btn:hover {
-    background: white;
-    color: #232f3e;
-  }
-  
-  .signup {
-    background-color: #ff9900;
-    color: white;
-    border: none;
-  }
-  
-  .signup:hover {
-    background-color: white;
-    color: #232f3e;
-  }
-  
-  /* Ensure content below navbar is not hidden */
-  body {
-    padding-top: 70px; /* Adjust to navbar height */
-  }
-  .navbar-logo img {
-    height: 40px; /* Adjust the height based on your design */
-    width: auto;  /* Maintain aspect ratio */
-    display: block;
-  }
-  
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #232f3e;
-    color: white;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1400px;
-    /* width:100vw; */
-    margin: 0 25px;
-    padding: 16px 2px;
-  }
-  
-  .navbar-menu {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-  }
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
 
-    .dropdown-menu li a {
-      color: inherit;
-      /* Inherit text color */
-      text-decoration: none;
-      /* Remove underline */
-      font-size: 0.9rem;
-      /* Adjust font size for a better fit */
-    }
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
 
-        .dropdown-menu li svg {
-          flex-shrink: 0;
-          /* Prevent icons from shrinking */
-        }
+.navbar-menu li {
+  position: relative;
+}
+
+.navbar-menu li span {
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.navbar-menu li span:hover {
+  color: #ff9900;
+}
+
+.navbar-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: black;
+  display: none;
+  flex-direction: column;
+  min-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  border-radius: 5px;
+}
+
+.navbar-dropdown:hover .dropdown-menu {
+  display: flex;
+  list-style: none;
+}
+
+.dropdown-menu li {
+  display: flex;
+  /* Use flexbox to align icon and text */
+  align-items: center;
+  /* Vertically align items */
+  gap: 10px;
+  /* Add spacing between the icon and text */
+  padding: 10px 20px;
+  list-style: none;
+  /* Ensure no bullets */
+  transition: background 0.3s;
+  /* Smooth hover effect */
+}
+
+.dropdown-menu li:hover {
+  background: #f1f1f1;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.icon-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:50px;
+  height:50px;
+  /* transition: background-color 2ms ease-in-out; */
+}
+
+.icon-container:hover {
+  background-color: #171f29;
+  border-radius: 50%;
+  /* padding: 8px; */
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: 2px;
+  background-color: rgb(162, 1, 1);
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 50%;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 10;
+}
+
+.user-dropdown a {
+  display: block;
+  padding: 5px 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.user-dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+.btn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: white;
+  color: #232f3e;
+}
+
+.signup {
+  background-color: #ff9900;
+  color: white;
+  border: none;
+}
+
+.signup:hover {
+  background-color: white;
+  color: #232f3e;
+}
+
+/* Ensure content below navbar is not hidden */
+body {
+  padding-top: 70px; /* Adjust to navbar height */
+}
+.navbar-logo img {
+  height: 40px; /* Adjust the height based on your design */
+  width: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #232f3e;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  /* width:100vw; */
+  margin: 0 25px;
+  /* padding: 16px 2px; */
+  padding-top: 12px ;
+  padding-bottom: 7px;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  color: inherit;
+  /* Inherit text color */
+  text-decoration: none;
+  /* Remove underline */
+  font-size: 0.9rem;
+  /* Adjust font size for a better fit */
+}
+
+.dropdown-menu li svg {
+  flex-shrink: 0;
+  /* Prevent icons from shrinking */
+}
