@@ -32,26 +32,26 @@ Expedia is a cutting-edge platform designed to simplify the export process for I
 
 This project is built with **Vite+React** and deployed on **Vercel**. Follow the steps below to set it up locally:
 
-### Clone the repository
+### 1. Clone the repository
 ```bash
 git clone https://github.com/hazraChandrima/as_frontend.git
 cd as_frontend
 
 ```
 
-### Install dependencies
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
-### Start the development server
+### 3. Start the development server
 
 ```bash
 npm start
 
 ```
 
-### Open your browser and navigate to
+### 4. Open your browser and navigate to
 ```bash
 http://localhost:5173
 ```
