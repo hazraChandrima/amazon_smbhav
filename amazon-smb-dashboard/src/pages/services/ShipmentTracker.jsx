@@ -105,8 +105,8 @@ const ShipmentTracker = () => {
             </div>
 
             {/* Alert Section */}
-            <div className="alert-box">
-              <h2>Safety Alerts</h2>
+            <div className="info-box">
+              <h3>Safety Alerts</h3>
               <p>
                 ⚠️ A severe storm is expected to impact the Indian Ocean region,
                 bringing heavy rain, strong winds, and rough seas.
@@ -118,7 +118,21 @@ const ShipmentTracker = () => {
               <h2>Time Left</h2>
               <p className="time">12:39:90 HRS</p>
             </div>
-
+            <div className="alert-box">
+              <h2>Shipment Information</h2>
+              <p>
+              <h3>Shipment Details</h3>
+              <ul>
+                <li>Tracking ID: 1123</li>
+                <li>Status: In Transit</li>
+                <li>ETA: June 15, 2023 at 02:30 PM</li>
+                <li>Carrier: FreshExpress Logistics</li>
+                <li>Current Location: Dubai, UAE</li>
+                <li>Origin: Delhi, India</li>
+                <li>Destination: London, UK</li>
+              </ul>
+              </p>
+            </div>
             {/* Notifications Section */}
             <div className="update-box">
               <h2>Notifications</h2>
