@@ -34,20 +34,31 @@ Expedia is a cutting-edge platform designed to simplify the export process for I
 
 This project is built with **Vite+React** and deployed on **Vercel**. Follow the steps below to set it up locally:
 
-\`\`\`bash
 # Clone the repository
-git clone https://github.com/your-username/expedia.git
-cd expedia
+```bash
+git clone https://github.com/hazraChandrima/as_frontend.git
+cd as_frontend
+
+```
 
 # Install dependencies
+```bash
 npm install
+```
 
 # Start the development server
+
+```bash
 npm start
 
+```
+
 # Open your browser and navigate to
+```bash
 http://localhost:5173
-\`\`\`
+```
+
+
 
 ---
 
@@ -59,10 +70,10 @@ The backend is deployed on **Netlify** and handles data processing, API integrat
 
 ## 📊 Technologies Used
 
-- **Frontend**: React, Chart.js for visualizations
+- **Frontend**: React + Vite, React chatbot, React leaflet, Chart.js for visualizations
 - **Backend**: Node.js, Express
 - **Deployment**: Vercel (Frontend), Netlify (Backend)
-- **Other Tools**: AI-based Carrier Recommendation Model
+- **Other Tools**: AI-based Carrier Comparison Model
 
 ---
 
@@ -76,16 +87,19 @@ The backend is deployed on **Netlify** and handles data processing, API integrat
 
 ## 💻 Contributors
 
-\`\`\`
+
 Avani Gupta: [GitHub Profile](https://github.com/guptaavani111)
+
 Chandrima Hazra: [GitHub Profile](https://github.com/hazraChandrima)
+
 Hemanvitha Pullela: [GitHub Profile](https://github.com/hemanvithapullela0456)
+
 Jaya Kumari: [GitHub Profile](https://github.com/jaya005)
-\`\`\`
+
 
 
 ## 📜 License
 
-\`\`\`
+
 This project is licensed under the MIT License.
-\`\`\`
+
