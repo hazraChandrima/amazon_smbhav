@@ -168,13 +168,13 @@ const ShipmentTracker = () => {
 
             <div className="time-left">
               <h2>Time Left</h2>
-              <p className="time">{formatTime(remainingTime)} HRS</p>
+              <p className="time-rem">{formatTime(remainingTime)} HRS</p>
             </div>
 
             <div className="update-box">
               <h2>Notifications</h2>
               <p>
-                ⚠️ Shipment #12345 has been rerouted to avoid the storm, expected to
+                ⚠️ Shipment #{trackingNumber} has been rerouted to avoid the storm, expected to
                 cross Port Kalinga next.
               </p>
             </div>
