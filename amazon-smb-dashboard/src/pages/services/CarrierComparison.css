@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
-
 /* Global styles */
 body {
   background-color: #f0f3ff;
@@ -11,7 +10,7 @@ body {
 
 /* Main container with responsive padding */
 .comparison-container {
-  width: 96vw;
+  width: 95.5vw;
   height: 100vh;
   margin: 0 auto;
   color: #1a202c;
@@ -31,6 +30,7 @@ body {
   padding-bottom: 10px;
   padding-left: 20px;
 }
+
 
 /* Hover and focus effects for inputs */
 .filter:hover,
@@ -63,7 +63,9 @@ body {
 }
 
 .generate-button:hover {
-  background-color: #e17800;
+  background-color: #fff;
+  border: 2px solid black;
+  color: #000;
 }
 
 .reset-button {
@@ -71,7 +73,9 @@ body {
 }
 
 .reset-button:hover {
-  background-color: #232f3eb7;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid black;
 }
 
 /* Results table */
@@ -123,7 +127,7 @@ body {
 
 /* Media queries for responsiveness */
 @media (max-width: 1024px) {
-  .filters {
+  .carrier-filters {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -134,7 +138,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .filters {
+  .carrier-filters {
     grid-template-columns: 1fr;
   }
 
@@ -147,9 +151,8 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 /* Filters section with rows */
-.filters {
+.carrier-filters {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -171,9 +174,9 @@ body {
 
 /* Filter group */
 .filter-group {
-  flex-grow: 1;
-  min-width: 250px;
-  max-width: 330px;
+  /* flex-grow: 1; */
+  min-width: 300px; /* Adjust minimum width */
+  max-width:330px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -190,26 +193,33 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Responsive behavior remains consistent */
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+/* Filter Label Styling */
 .filter-label {
-  font-size: 18px;
-  font-weight: 500;
-  color: #4a5568;
-  margin-bottom: 0;
-  display: block;
-  text-align: left;
+  font-size: 18px; /* Matches the desired size */
+  font-weight: 500; /* Semi-bold for emphasis */
+  color: #4a5568; /* Neutral gray */
+  margin-bottom: 0px; /* Small space between label and dropdown */
+  display: block; /* Ensures full-width alignment */
+  text-align: left; /* Align text to center horizontally */
   padding-left: 7px;
 }
 
 .buttons-group {
   margin-left: 10px;
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  justify-content: center; /* Center align the buttons */
+  gap: 20px; /* Space between the buttons */
+  margin-top: 30px; /* Add some space above the buttons */
+  margin-bottom: 15px; /* Add some space below the buttons */
 }
 
-/* Modal Content */
 .modal-content h2 {
   font-size: 25px;
   margin-bottom: 10px;
@@ -244,7 +254,6 @@ body {
   margin-top: 10px;
   font-size: 14px;
 }
-
 .negotiate-button {
   padding: 5px 10px;
   background-color: #007bff;
@@ -257,6 +266,27 @@ body {
 .negotiate-button:hover {
   background-color: #0056b3;
 }
+.results-table .table-header,
+.results-table .table-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Adjust for 7 columns */
+  gap: 10px;
+  align-items: center;
+}
+
+.results-table .negotiate-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.results-table .negotiate-button:hover {
+  background-color: #0056b3;
+}
+
 
 /* Style for Market Trend Section inside the Modal */
 .market-trend {
@@ -267,6 +297,11 @@ body {
   text-align: center;
 }
 
+/* Close and Cancel Buttons */
+.close-button, .submit-button {
+  margin-top: 15px;
+}
+
 /* Overlay Effect when Modal is Open */
 .negotiation-modal {
   position: fixed;
@@ -274,19 +309,33 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* Transparent dark overlay */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 999; /* Ensure it's on top of other content */
 }
 
 /* Modal Content Styling */
 .modal-content {
-  background: white;
+  background: white; /* White background for the modal */
   padding: 20px;
   border-radius: 10px;
-  width: 450px;
+  width: 450px; /* Set a fixed width for the modal */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center content inside the modal */
+}
+
+/* Style for Market Trend Section inside the Modal */
+.market-trend {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
   text-align: center;
+}
+
+/* Close and Cancel Buttons */
+.close-button, .submit-button {
+  margin-top: 15px;
 }
